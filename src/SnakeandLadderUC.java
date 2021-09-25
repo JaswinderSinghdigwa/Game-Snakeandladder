@@ -1,7 +1,6 @@
 
 public class SnakeandLadderUC {
-
-	public String name= "User";
+   	public String name= "User";
     public int position=0;
     public int[] ladder = {4,24,48,67,86};
     public int[] ladderlength= {13,23,5,12,13};
@@ -12,11 +11,11 @@ public class SnakeandLadderUC {
 public void snake() {
   int  chances = 0;
     System.out.println("----------------LeTs StArT ThE GaMe----------------\n");
+    while(position <= 100) {
     	int roll = (int) Math.floor(Math.random()*10) % 6 + 1;
        System.out.println(+ roll);
         position = roll + position;
         if(position > 100) {
-        	System.out.print("NOplay");
             position = position - roll;
         }
         for(int n = 0; n < ladder.length; n++) {
@@ -29,13 +28,14 @@ public void snake() {
                     position = position - lengthsnake[n];
                 	}
         }
+    }
+}
 }
 
 class Game{
 public static void main(String[] args) {
-	SnakeandLadderUC ladd = new SnakeandLadderUC();
-	ladd.snake();	
-	}
-}
+SnakeandLadderUC6 ladd = new SnakeandLadderUC6();
+ladd.snake();	
 }
 
+}
