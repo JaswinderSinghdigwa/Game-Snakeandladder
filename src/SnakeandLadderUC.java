@@ -1,5 +1,6 @@
 
 public class SnakeandLadderUC {
+
    	public String name= "User";
     public int position=0;
     public int[] ladder = {4,24,48,67,86};
@@ -18,6 +19,10 @@ public void snake() {
         if(position > 100) {
             position = position - roll;
         }
+        else if(position == 100) {
+            System.out.println("completed the game Winner");
+            break;
+        }
         for(int n = 0; n < ladder.length; n++) {
                 if (position == ladder[n]) {
                     position = position + ladderlength[n];
@@ -28,13 +33,14 @@ public void snake() {
                     position = position - lengthsnake[n];
                 	}
         }
+
     }
 }
 }
 
 class Game{
 public static void main(String[] args) {
-SnakeandLadderUC6 ladd = new SnakeandLadderUC6();
+SnakeandLadderUC ladd = new SnakeandLadderUC();
 ladd.snake();	
 }
 
